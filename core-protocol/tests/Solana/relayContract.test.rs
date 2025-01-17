@@ -1,0 +1,1 @@
+// This file contains tests for the Solana relay contract, validating its operations.

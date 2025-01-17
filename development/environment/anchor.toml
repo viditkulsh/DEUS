@@ -1,0 +1,21 @@
+[program]
+name = "DEUS"
+version = "0.1.0"
+description = "Cross-chain communication platform"
+repository = "https://github.com/yourusername/DEUS"
+license = "MIT"
+
+[build]
+program = "target/deploy/deus.so"
+
+[features]
+default = ["client"]
+
+[client]
+# Client configuration for the Anchor framework
+solana_sdk = { version = "1.9.0", features = ["client"] }
+
+[dependencies]
+# Add your dependencies here
+anchor-lang = "0.24.2"
+solana-program = "1.9.0"

@@ -1,0 +1,1 @@
+// This file provides the Merkle proof implementation using OpenZeppelin's library for cryptographic verification.

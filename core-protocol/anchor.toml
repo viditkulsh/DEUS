@@ -1,0 +1,16 @@
+[project]
+name = "DEUS"
+version = "0.1.0"
+description = "Cross-chain communication protocol"
+repository = "https://github.com/yourusername/DEUS"
+license = "MIT"
+
+[build]
+program = "target/deploy/deus.so"
+
+[features]
+default = ["client"]
+
+[client]
+# Client configuration for the DEUS protocol
+```

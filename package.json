@@ -1,0 +1,36 @@
+{
+  "name": "DEUS",
+  "version": "1.0.0",
+  "description": "A comprehensive cross-chain communication platform enabling bidirectional communication between blockchain networks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "node core-protocol/scripts/deploy.js",
+    "verify": "node core-protocol/scripts/verify.js",
+    "start": "node network-infrastructure/message-queue/queue.js"
+  },
+  "dependencies": {
+    "ethers": "^5.0.0",
+    "web3": "^1.0.0",
+    "libp2p": "^0.28.0",
+    "@openzeppelin/contracts": "^4.0.0",
+    "chainlink": "^0.8.0",
+    "axelar-network": "^1.0.0",
+    "wormhole": "^1.0.0"
+  },
+  "devDependencies": {
+    "hardhat": "^2.0.0",
+    "anchor": "^0.18.0",
+    "mocha": "^8.0.0",
+    "chai": "^4.0.0"
+  },
+  "keywords": [
+    "blockchain",
+    "cross-chain",
+    "communication",
+    "decentralized",
+    "protocol"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
