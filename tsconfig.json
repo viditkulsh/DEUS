@@ -6,16 +6,27 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",
-    "rootDir": "./src"
+    "outDir": "./dist", 
+    "rootDir": ".", 
+    "resolveJsonModule": true,
+    "allowJs": true
   },
   "include": [
+    "core-protocol/**/*.ts",
+    "core-protocol/**/*.js",
+    "network-infrastructure/**/*.ts",
     "network-infrastructure/**/*.js",
+    "security/**/*.ts",
     "security/**/*.js",
-    "development/**/*.js"
+    "smart-contracts/**/*.ts",
+    "smart-contracts/**/*.js",
+    "development/**/*.ts",
+    "development/**/*.js",
+    "docs/**/*.ts"
   ],
   "exclude": [
     "node_modules",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "**/*.test.ts"
   ]
 }

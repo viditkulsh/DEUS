@@ -1,3 +1,5 @@
+require("dotenv").config(); // Load environment variables from .env file
+
 module.exports = {
   solidity: {
     version: "0.8.0",
@@ -10,10 +12,14 @@ module.exports = {
   },
   networks: {
     ethereum: {
-      url: "https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID",
-      accounts: ["YOUR_PRIVATE_KEY"],
+      url: `https://mainnet.infura.io/v3/${process.env.INFURA_PROJECT_ID}`, // Mainnet URL from Infura
+      accounts: [process.env.PRIVATE_KEY], // Private key from .env
     },
-    // Add other networks as needed
+    sepolia: {
+      url: `https://sepolia.infura.io/v3/${process.env.INFURA_PROJECT_ID}`, // Sepolia Testnet URL
+      accounts: [process.env.PRIVATE_KEY], // Private key for Sepolia
+    },
+    // Add other networks if needed
   },
   paths: {
     sources: "./contracts/Ethereum",
