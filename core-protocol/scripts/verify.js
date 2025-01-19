@@ -1,33 +1,22 @@
-const { ethers } = require("hardhat");
-
-async function verifyContract(contractAddress, args) {
-    console.log("Verifying contract...");
-    try {
-        await run("verify:verify", {
-            address: contractAddress,
-            constructorArguments: args,
-        });
-        console.log("Contract verified successfully!");
-    } catch (error) {
-        console.error("Error verifying contract:", error);
-    }
-}
+require("dotenv").config();
+const hre = require("hardhat");
 
 async function main() {
-    const contractAddress = process.argv[2];
-    const args = process.argv.slice(3);
+  const contractAddress = process.env.CONTRACT_ADDRESS;
+  if (!contractAddress) {
+    console.error("Please provide a contract address.");
+    process.exit(1);
+  }
 
-    if (!contractAddress) {
-        console.error("Please provide a contract address.");
-        process.exit(1);
-    }
-
-    await verifyContract(contractAddress, args);
+  await hre.run("verify:verify", {
+    address: contractAddress,
+    constructorArguments: [], // Add constructor arguments if any
+  });
 }
 
 main()
-    .then(() => process.exit(0))
-    .catch((error) => {
-        console.error(error);
-        process.exit(1);
-    });
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });   

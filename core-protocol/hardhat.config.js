@@ -1,14 +1,38 @@
+require("@nomiclabs/hardhat-ethers");
+require("@nomiclabs/hardhat-etherscan");
 require("dotenv").config(); // Load environment variables from .env file
+
+task("verify-contract", "Verifies a contract on Etherscan")
+  .addParam("address", "The contract address")
+  .setAction(async (taskArgs) => {
+    await hre.run("verify:verify", {
+      address: taskArgs.address,
+      constructorArguments: [], // Add constructor arguments if any
+    });
+  });
 
 module.exports = {
   solidity: {
-    version: "0.8.0",
-    settings: {
-      optimizer: {
-        enabled: true,
-        runs: 200,
+    compilers: [
+      {
+        version: "0.8.0",
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 200,
+          },
+        },
       },
-    },
+      {
+        version: "0.8.20",
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 200,
+          },
+        },
+      },
+    ],
   },
   networks: {
     ethereum: {
@@ -30,4 +54,7 @@ module.exports = {
   mocha: {
     timeout: 20000,
   },
-};
+  etherscan: {
+    apiKey: process.env.ETHERSCAN_API_KEY,
+  },
+};  

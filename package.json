@@ -13,15 +13,18 @@
     "@axelar-network/axelarjs-sdk": "^0.17.0",
     "@openzeppelin/contracts": "^5.2.0",
     "chainlink": "^0.8.2",
-    "dotenv": "^16.4.7",
-    "ethers": "^6.13.5",
     "libp2p": "^2.5.0",
     "web3": "^4.16.0",
     "wormhole": "^3.0.0"
   },
   "devDependencies": {
     "@axelar-network/axelarjs-sdk": "^0.17.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.12",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@nomiclabs/hardhat-etherscan": "^3.1.8",
     "anchor": "^1.4.1",
+    "dotenv": "^16.4.7",
+    "ethers": "^5.7.2",
     "hardhat": "^2.22.18"
   },
   "keywords": [
